@@ -1,0 +1,11 @@
+.index_html{
+    background-color: antiquewhite;
+}
+.table_list{
+    width: 100%;
+}
+
+#tr1{
+    font-style:italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

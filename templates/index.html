@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Crud Modularization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+
+<body class="index_html">
+    <a href="/users/new">Add User</a>
+    <h1>This is the Users List!</h1>
+    <table class="table_list">
+        <tr id="tr1">
+            <td>Id</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Create_at</td>
+            <td>Actions</td>
+        </tr>
+        {% for user in all_users %}
+        <tr>
+            <td>
+                {{user.id}}
+            </td>
+            <td>
+                {{user.first_name}}
+            </td>
+            <td>
+                {{user.last_name}}
+            </td>
+            <td>
+                {{user.email}}
+            </td>
+            <td>
+                {{ user.created_at }}
+            </td>
+            <td>
+                <a href="/users/get_one/{{ user.id }}">Show</a>
+                <a href="/users/edit/{{ user.id }}">Edit</a>
+                <a href="/users/delete/{{user.id}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <hr>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
